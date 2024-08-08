@@ -133,6 +133,7 @@ import 'package:flutter_car_rescue/components/button/cr_elevated_button.dart';
 import 'package:flutter_car_rescue/components/text_field/cr_text_field.dart';
 import 'package:flutter_car_rescue/components/text_field/cr_text_field_password.dart';
 import 'package:flutter_car_rescue/gen/assets.gen.dart';
+import 'package:flutter_car_rescue/pages/auth/forgot_password_page.dart';
 import 'package:flutter_car_rescue/pages/auth/register_page.dart';
 import 'package:flutter_car_rescue/pages/home/home_page.dart';
 import 'package:flutter_car_rescue/resources/app_color.dart';
@@ -169,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
       isLoading = true;
     });
 
-    String res = await AuthMethod().loginUser(
+    String res = await AuthService().loginUser(
         email: emailController.text, password: passwordController.text);
 
     if (res == "success") {
@@ -244,7 +245,14 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                 const SizedBox(height: 25.0),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotPasswordPage(),
+                      ),
+                      (Route<dynamic> route) => false,
+                    );
+                  },
                   child: const Text(
                     style: TextStyle(
                         color: AppColor.black,
