@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "385701563132",
+    "project_id": "task-hieu",
+    "storage_bucket": "task-hieu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385701563132:android:029a3ae9633be45f712579",
+        "android_client_info": {
+          "package_name": "com.hieu.login1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV1F9RbQ1PeE46rexhsseQ3p-ZyyJvyaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
