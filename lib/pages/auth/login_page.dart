@@ -127,15 +127,17 @@
 //     );
 //   }
 // }
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_car_rescue/components/button/cr_elevated_button.dart';
 import 'package:flutter_car_rescue/components/text_field/cr_text_field.dart';
 import 'package:flutter_car_rescue/components/text_field/cr_text_field_password.dart';
 import 'package:flutter_car_rescue/gen/assets.gen.dart';
+import 'package:flutter_car_rescue/pages/auth/register_page.dart';
 import 'package:flutter_car_rescue/pages/home/home_page.dart';
 import 'package:flutter_car_rescue/resources/app_color.dart';
 import 'package:flutter_car_rescue/services/remote/body/auth_services.dart';
-import 'package:flutter_car_rescue/services/remote/body/show_snack_bar.dart';
+import 'package:flutter_car_rescue/components/snack_bar/show_snack_bar.dart';
 import 'package:flutter_car_rescue/utils/validator.dart';
 
 class LoginPage extends StatefulWidget {
@@ -202,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
             child: ListView(
               children: [
                 const Text(
-                  'Log in',
+                  'Sign in',
                   style: TextStyle(color: AppColor.black, fontSize: 26.0),
                   textAlign: TextAlign.center,
                 ),
@@ -235,7 +237,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: CircularProgressIndicator(),
                       )
                     : CrElevatedButton(
-                        text: 'Log in',
+                        text: 'Sign in',
                         color: AppColor.bglogin,
                         borderColor: AppColor.bglogin,
                         onPressed: loginUser,
@@ -276,19 +278,29 @@ class _LoginPageState extends State<LoginPage> {
                   color: AppColor.bggg,
                   borderColor: AppColor.white,
                 ),
-                const SizedBox(height: 140.0),
+                const SizedBox(height: 135.0),
                 Center(
                   child: RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       text: 'Don\'t have an account, ',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16.0,
                         color: Colors.black,
                       ),
                       children: <TextSpan>[
                         TextSpan(
-                            text: 'Register',
-                            style: TextStyle(fontWeight: FontWeight.bold)),
+                          text: 'Register',
+                          style: const TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.bold),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () =>
+                                Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                    builder: (context) => const RegisterPage(),
+                                  ),
+                                  (Route<dynamic> route) => false,
+                                ),
+                        )
                       ],
                     ),
                   ),
