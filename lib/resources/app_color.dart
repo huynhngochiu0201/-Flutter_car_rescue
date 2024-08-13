@@ -20,4 +20,6 @@ class AppColor {
   static const Color bgfb = Color(0XFF3B5998);
   static const Color bglogin = Color(0XFFFC6011);
   static const Color bggg = Color.fromARGB(255, 182, 44, 16);
+  static const Color primaryColor = Colors.orange;
+  static const Color secondaryColor = Colors.black54;
 }
