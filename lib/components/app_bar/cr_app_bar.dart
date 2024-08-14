@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_car_rescue/gen/assets.gen.dart';
 import 'package:flutter_car_rescue/resources/app_color.dart';
 
-class TdAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const TdAppBar(
+class CrAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CrAppBar(
       {super.key,
       this.leftPressed,
       this.rightPressed,

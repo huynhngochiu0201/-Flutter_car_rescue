@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
-class TdZoomDrawer extends StatelessWidget {
-  const TdZoomDrawer({
+class CrZoomDrawer extends StatelessWidget {
+  const CrZoomDrawer({
     super.key,
     this.controller,
     required this.menuScreen,

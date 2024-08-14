@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_car_rescue/gen/assets.gen.dart';
+import 'package:flutter_car_rescue/models/explore_model.dart';
+import 'package:flutter_car_rescue/models/seller_model.dart';
 import 'package:flutter_car_rescue/pages/auth/login_page.dart';
-import 'package:flutter_car_rescue/pages/seller/shop_page.dart';
+import 'package:flutter_car_rescue/pages/manage_seller/shop_page.dart';
 import 'package:flutter_car_rescue/resources/app_color.dart';
 import 'package:flutter_car_rescue/services/remote/body/auth_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -105,8 +107,14 @@ class _DrawerPageState extends State<DrawerPage> {
           const SizedBox(height: 18.0),
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const ShopPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ShopPage(
+                      shopModels: shopModel,
+                      explore: explores,
+                    ),
+                  ));
             },
             behavior: HitTestBehavior.translucent,
             child: const Row(

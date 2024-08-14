@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_car_rescue/components/navigator/app_bottomnavbar1.dart';
-import 'package:flutter_car_rescue/components/td_app_bar.dart';
-import 'package:flutter_car_rescue/components/td_zoom_drawer.dart';
+import 'package:flutter_car_rescue/components/app_bar/cr_app_bar.dart';
+import 'package:flutter_car_rescue/components/cr_zoom_drawer.dart';
 import 'package:flutter_car_rescue/pages/home/drawer_page.dart';
 import 'package:flutter_car_rescue/pages/home/home_page.dart';
 import 'package:flutter_car_rescue/pages/profile/profile_page.dart';
@@ -44,14 +44,14 @@ class _MainPageState extends State<MainPage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: AppColor.bgColor,
-        appBar: TdAppBar(
+        appBar: CrAppBar(
           leftPressed: toggleDrawer,
           rightPressed: () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => const ProfilePage(),
           )),
           title: widget.title,
         ),
-        body: TdZoomDrawer(
+        body: CrZoomDrawer(
           controller: zoomDrawerController,
           menuScreen: DrawerPage(pageIndex: selectedIndex),
           screen: IndexedStack(
