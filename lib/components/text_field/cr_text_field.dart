@@ -13,12 +13,14 @@ class CrTextField extends StatelessWidget {
     this.textInputAction,
     this.validator,
     this.readOnly = false,
+    this.labelText,
   });
 
   final TextEditingController? controller;
   final FocusNode? focusNode;
   final TextInputType? keyboardType;
   final String? hintText;
+  final String? labelText;
   final Icon? prefixIcon;
   final Function(String)? onFieldSubmitted;
   final TextInputAction? textInputAction;
@@ -60,13 +62,13 @@ class CrTextField extends StatelessWidget {
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.6),
             filled: true,
-            fillColor: Colors.pink.shade50,
+            fillColor: const Color.fromARGB(255, 255, 255, 255),
             border: outlineInputBorder(AppColor.red),
             focusedBorder: outlineInputBorder(AppColor.blue),
             enabledBorder: outlineInputBorder(AppColor.orange),
             hintText: hintText,
             hintStyle: const TextStyle(color: AppColor.grey),
-            labelText: hintText,
+            labelText: labelText,
             prefixIcon: prefixIcon,
             errorStyle: const TextStyle(color: AppColor.red),
           ),

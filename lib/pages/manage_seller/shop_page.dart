@@ -195,7 +195,8 @@ class _ShopPageState extends State<ShopPage> {
                     "In today's fast-paced world, unexpected car troubles can be more than just an inconvenience—they can disrupt your entire day.\nThe 24/7 Car Rescue app is designed to be your reliable partner on the road, offering immediate assistance whenever and wherever you need it. \nWhether you're dealing with a flat tire, a dead battery, or any other roadside emergency, our app connects you with professional rescue teams who are just a tap away. \nWith 24/7 availability, real-time tracking, and a network of trusted service providers, this app ensures that help is always within reach, providing you with peace of mind and keeping you safe on the road. \nDon't let car troubles slow you down—let 24/7 Car Rescue be your lifeline in times of need.",
                     style: TextStyle(fontSize: 16.8),
                   ),
-                )
+                ),
+                const SizedBox(height: 20.0),
               ],
             ),
           ),

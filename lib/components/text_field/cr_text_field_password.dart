@@ -68,7 +68,7 @@ class _CrTextFieldPasswordState extends State<CrTextFieldPassword> {
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.6),
             filled: true,
-            fillColor: Colors.pink.shade50,
+            fillColor: const Color.fromARGB(255, 255, 255, 255),
             border: outlineInputBorder(AppColor.red),
             focusedBorder: outlineInputBorder(AppColor.blue),
             enabledBorder: outlineInputBorder(AppColor.orange),
